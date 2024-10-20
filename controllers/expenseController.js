@@ -1,6 +1,6 @@
 const Expense = require('../models/Expense');
 
-// Add a new expense
+
 exports.addExpense = async (req, res) => {
   const { description, amount, paidBy, participants, splitMethod } = req.body;
 
@@ -25,7 +25,6 @@ exports.addExpense = async (req, res) => {
   }
 };
 
-// Retrieve all expenses
 exports.getAllExpenses = async (req, res) => {
   try {
     const expenses = await Expense.find().populate('paidBy').populate('participants.user');
